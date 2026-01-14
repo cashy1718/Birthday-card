@@ -156,7 +156,7 @@
       <p><strong>— Cash</strong></p>
       <div class="audio-box">
         <p style="font-size: 0.85rem; color: var(--deep); margin-bottom: 10px;">🎧 Set the mood (Press Play)</p>
-        <audio id="bgMusic" src="everything.mp3"></audio>
+        <iframe style="border-radius:12px" src="everything.mp3" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
       </div>
     </div>
   </div>
@@ -205,14 +205,8 @@
         hearts = true;
         setInterval(createHeart, 800);
       }
-      PlayMusic();
     }, 400);
     
-  }
-
-  function PlayMusic() {
-    const audio = document.getElementById('bgMusic');
-    audio.play().catch(err => console.error("Playback failed:", err));
   }
 
   function createHeart(){
@@ -233,6 +227,7 @@
 </body>
 
 </html>
+
 
 
 
