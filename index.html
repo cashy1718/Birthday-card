@@ -192,6 +192,17 @@
   let hearts = false;
   const audio = new Audio('everythingA.mp3');
 
+  window.addEventListener("message", (event) => {
+    if (event.data?.type === "video-played") {
+      onVideoPlay(event.data.title);
+    }
+  });
+
+  function onVideoPlay(title) {
+    console.log("Video started:", title);
+    PauseMusic();
+  }
+
   function revealNote(){
     document.getElementById('envelope').style.transform = 'scale(0)';
     setTimeout(() => {
@@ -214,6 +225,10 @@
     audio.play();
   }
 
+  function PauseMusic() {
+    audio.pause();
+  }
+
   function createHeart(){
     const h = document.createElement('div');
     h.className = 'heart'; h.innerHTML = '💜';
@@ -232,6 +247,7 @@
 </body>
 
 </html>
+
 
 
 
